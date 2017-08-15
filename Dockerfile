@@ -34,7 +34,7 @@ RUN yum install -y gnuplot \
     && ln -s /usr/share/opentsdb /opt/opentsdb
 
 # set tsd.core.auto_create_metrics = True
-RUN sed -i 's/tsd.core.auto_create_metrics = False/tsd.core.auto_create_metrics = True/g' /opt/opentsdb/etc/opentsdb/opentsdb.conf
+RUN sed -i 's/#tsd.core.auto_create_metrics = false/tsd.core.auto_create_metrics = true/g' /opt/opentsdb/etc/opentsdb/opentsdb.conf
 
 RUN yum clean all
 ADD manage.sh /opt/manage.sh

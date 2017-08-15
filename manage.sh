@@ -1,5 +1,5 @@
 # start hbase
-start-hbase.sh 1>/dev/null
+start-hbase.sh
 echo "HBase started."
 sleep 3
 
@@ -16,4 +16,3 @@ echo "OpenTSDB started."
 
 # tail to keep container running
 tail -f /var/log/opentsdb/opentsdb.log
-
