@@ -15,7 +15,8 @@ ENV CLASSPATH .:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$CLASSPATH
 
 # install HBase
 RUN cd /opt && curl -O https://mirrors.tuna.tsinghua.edu.cn/apache/hbase/stable/hbase-1.2.6-bin.tar.gz
-RUN yum install -y tar
+# fix err: https://github.com/CentOS/sig-cloud-instance-images/issues/15
+RUN yum install -y tar; yum clean all
 RUN tar zxf hbase-1.2.6-bin.tar.gz \
     && mv hbase-1.2.6/ hbase/ \
     && rm -f hbase-1.2.6-bin.tar.gz
@@ -40,4 +41,3 @@ ADD manage.sh /opt/manage.sh
 ENTRYPOINT ["/bin/bash", "/opt/manage.sh"]
 EXPOSE 4242 60000 60010 60030
 # CMD [""]
-
