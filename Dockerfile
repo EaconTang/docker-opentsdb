@@ -28,7 +28,7 @@ RUN start-hbase.sh
 
 # install tsd
 RUN cd /opt && curl -kLO https://github.com/OpenTSDB/opentsdb/releases/download/v2.3.0/opentsdb-2.3.0.rpm
-RUN yum install -y gnuplot \
+RUN yum install -y gnuplot; yum clean all \
     && rpm -ivh opentsdb-2.3.0.rpm \
     && rm -f opentsdb-2.3.0.rpm \
     && ln -s /usr/share/opentsdb /opt/opentsdb
