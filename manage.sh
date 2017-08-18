@@ -1,3 +1,4 @@
+#!/bin/bash
 # start hbase
 start-hbase.sh
 echo "HBase started."

@@ -31,6 +31,7 @@ RUN yum install -y gnuplot; yum clean all \
     && rm -f opentsdb-2.3.0.rpm \
     && ln -s /usr/share/opentsdb /opt/opentsdb
 
+
 # more...
 ADD manage.sh /opt/manage.sh
 RUN chmod +x /opt/manage.sh
