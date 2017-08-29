@@ -8,7 +8,7 @@ WORKDIR /opt
 # install JDK8
 RUN yum install -y java-1.8.0-openjdk; yum clean all
 
-ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.141-2.b16.el6_9.x86_64/jre
+ENV JAVA_HOME /usr/lib/jvm/jre-1.8.0-openjdk.x86_64
 ENV PATH $PATH:$JAVA_HOME/bin
 ENV CLASSPATH .:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$CLASSPATH
 
@@ -33,9 +33,9 @@ RUN yum install -y gnuplot; yum clean all \
 
 
 # more...
-ADD manage.sh /opt/manage.sh
-RUN chmod +x /opt/manage.sh
+ADD entrypoint.sh /opt/entrypoint.sh
+RUN chmod +x /opt/entrypoint.sh
 
 EXPOSE 4242 60000 60010 60030
-ENTRYPOINT ["/opt/manage.sh"]
+ENTRYPOINT ["/opt/entrypoint.sh"]
 # CMD [""]
