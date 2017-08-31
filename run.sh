@@ -29,7 +29,7 @@ echo "OpenTSDB started."
 
 # tail to keep container running
 # make sure tail log is ok
-while [ ! -e /var/log/opentsdb/opentsdb.log]
+while [ ! -e /var/log/opentsdb/opentsdb.log ]
 do
   sleep 1
 done
