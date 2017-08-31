@@ -33,9 +33,8 @@ RUN yum install -y gnuplot; yum clean all \
 
 
 # more...
-ADD entrypoint.sh /opt/entrypoint.sh
-RUN chmod +x /opt/entrypoint.sh
+ADD run.sh /opt/run.sh
+RUN chmod +x /opt/run.sh
 
 EXPOSE 4242 60000 60010 60030
-ENTRYPOINT ["/opt/entrypoint.sh"]
-# CMD [""]
+CMD ["/opt/run.sh"]
