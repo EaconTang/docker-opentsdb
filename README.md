@@ -2,13 +2,20 @@
 
 **Ready-to-run OpenTSDB image.**  
 
-## Usage
-Just one cmd to run image:  
-```docker run -d -p 4242:4242 --name opentsdb eacon/docker-opentsdb```
 
-Supported tags:
+## Usage
+To build image from Dockerfile:  
+```cd <path-to-Dockerfile> && docker build -t eacon/docker-opentsdb:latest .
+```
+
+To run image:  
+```docker run -d -p 4242:4242 --name opentsdb eacon/docker-opentsdb
+```
+
+Supported tags:  
 - latest(default to 2.3)
 - 2.3
+
 
 ## DockerHub
 This image is published on docker hub([docker-opentsdb](https://hub.docker.com/r/eacon/docker-opentsdb/)), each push into this repo will trigger its automated build, so your Pull Requests are welcome!  

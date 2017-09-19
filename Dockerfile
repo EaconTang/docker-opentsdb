@@ -37,4 +37,6 @@ ADD run.sh /opt/run.sh
 RUN chmod +x /opt/run.sh
 
 EXPOSE 4242 60000 60010 60030
+
+# run program in PID 1
 CMD ["/opt/run.sh"]

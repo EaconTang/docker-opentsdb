@@ -11,7 +11,7 @@ if [ ! -e /opt/tsd_tables_created ]; then
   echo "HBase tables for opentsdb created!"
 fi
 
-# modify opentsdb.conf default settings at first bootstrap
+# modify opentsdb.conf default settings on first bootstrap
 if [ ! -e /opt/tsd_settings_modified ]; then
   # set tsd.core.auto_create_metrics = True
   sed -i 's/#tsd.core.auto_create_metrics = false/tsd.core.auto_create_metrics = true/g' /opt/opentsdb/etc/opentsdb/opentsdb.conf
@@ -26,6 +26,9 @@ fi
 # start opentsdb
 service opentsdb start
 echo "OpenTSDB started."
+
+# catch signal SIGTERM, gracefullly stop hbase and opentsdb
+trap 'service opentsdb stop && stop-hbase.sh;exit' SIGTERM
 
 # tail to keep container running
 # make sure tail log is ok
