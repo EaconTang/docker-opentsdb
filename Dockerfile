@@ -36,7 +36,7 @@ RUN yum install -y gnuplot; yum clean all \
 ADD run.sh /opt/run.sh
 RUN chmod +x /opt/run.sh
 
-EXPOSE 4242 60000 60010 60030
+EXPOSE 4242 60000 60010 60030 2181
 
 # run program in PID 1
 CMD ["/opt/run.sh"]
