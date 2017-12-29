@@ -1,5 +1,7 @@
 # docker-opentsdb
 
+[![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)]()
+
 **Ready-to-run OpenTSDB image.**  
 
 
