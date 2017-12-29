@@ -7,11 +7,13 @@
 
 ## Usage
 To build image from Dockerfile:  
-```cd <path-to-Dockerfile> && docker build -t eacon/docker-opentsdb:latest .
+```
+cd <path-to-Dockerfile> && docker build -t eacon/docker-opentsdb:latest .
 ```
 
 To run image:  
-```docker run -d -p 4242:4242 --name opentsdb eacon/docker-opentsdb
+```
+docker run -d -p 4242:4242 --name opentsdb eacon/docker-opentsdb
 ```
 
 Supported tags:  
